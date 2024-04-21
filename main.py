@@ -3,6 +3,8 @@ import save
 
 window = tkinter.Tk()
 window.title("Password Manager")
+logo = tkinter.PhotoImage(file="logo.png")
+window.iconphoto(False, logo)
 window.config(bg="#E1E9EF", padx=100, pady=50)
 
 title_label = tkinter.Label(text="Password Manager", font=("", 25, "bold"), fg="#161616", bg="#E1E9EF")
