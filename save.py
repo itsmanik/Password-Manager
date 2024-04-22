@@ -1,5 +1,6 @@
 import json
 import tkinter.messagebox
+import pyperclip
 
 def save(platform, email, password):
     platform_text = platform.get()
@@ -24,3 +25,4 @@ def save(platform, email, password):
     password.delete(0, "end")
     email.delete(0, "end")
     platform.delete(0, "end")
+    pyperclip.copy(password_text)
