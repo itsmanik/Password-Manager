@@ -25,7 +25,7 @@ password_label.grid(row=4, column=1, sticky="W")
 password = tkinter.Entry(font=("", 15, "normal"))
 password.grid(row=5, column=1, pady=(0, 12), padx=(0, 50))
 
-save_button = tkinter.Button(text="Save", command=lambda: save.save(platform.get(), email.get(), password.get()), fg="white", bg="#4D7044", font=("", 12, "normal"))
+save_button = tkinter.Button(text="Save", command=lambda: save.save(platform, email, password), fg="white", bg="#4D7044", font=("", 12, "normal"))
 save_button.grid(row=5, column=2, sticky="ewn")
 
 window.mainloop()
