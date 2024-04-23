@@ -28,4 +28,16 @@ password.grid(row=5, column=1, pady=(0, 12), padx=(0, 50))
 save_button = tkinter.Button(text="Save", command=lambda: save.save(platform, email, password), fg="white", bg="#4D7044", font=("", 12, "normal"))
 save_button.grid(row=5, column=2, sticky="ewn")
 
+canvas = tkinter.Canvas(width=500, height=70, bg="#E1E9EF", highlightthickness=0)
+canvas.create_line(0, 35, 500, 35, width=2, fill="#6C6C6C")
+canvas.grid(row=6, column=1, columnspan=2)
+
+load_platform_label = tkinter.Label(text="Platform", bg="#E1E9EF", font=("", 12, "normal"))
+load_platform_label.grid(row=7, column=1, sticky="w")
+load_platform_entry = tkinter.Entry(font=("", 15, "normal"))
+load_platform_entry.grid(row=8, column=1, pady=(0, 20), padx=(0, 50))
+
+load_button = tkinter.Button(text="Load", fg="white", bg="#54859B", font=("", 12, "normal"), padx=50)
+load_button.grid(row=8, column=2, sticky="nw")
+
 window.mainloop()
