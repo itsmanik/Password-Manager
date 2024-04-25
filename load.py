@@ -1,15 +1,24 @@
 import json
 import tkinter
+import tkinter.messagebox
 
 def load(platform, window):
     platform_text = platform.get()
     platform.delete(0, "end")
 
-    with open("data.json") as data:
-        saved_passwords = json.load(data)
+    try:
+        with open("data.json") as data:
+            saved_passwords = json.load(data)
+    except FileNotFoundError:
+        tkinter.messagebox.showerror(title="Error", message="You need to save some information before accessing!")
+        return
 
-    mail = saved_passwords[platform_text]["email"]
-    password = saved_passwords[platform_text]["password"]
+    try:
+        mail = saved_passwords[platform_text]["email"]
+        password = saved_passwords[platform_text]["password"]
+    except KeyError:
+        tkinter.messagebox.showerror(title="Error", message="The information you are trying to find, does not exists!")
+        return
     
     show_info_window = tkinter.Toplevel(window)
     show_info_window.title("Saved")
