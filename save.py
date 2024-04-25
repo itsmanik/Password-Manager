@@ -26,3 +26,4 @@ def save(platform, email, password):
     email.delete(0, "end")
     platform.delete(0, "end")
     pyperclip.copy(password_text)
+    
