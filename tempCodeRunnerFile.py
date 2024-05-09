@@ -1,7 +1,6 @@
 import tkinter
 import save
 import load
-from loadAll import loadAll
 
 window = tkinter.Tk()
 window.title("Password Manager")
@@ -11,7 +10,7 @@ window.config(bg="#E1E9EF", padx=100, pady=50)
 
 # Header
 title_label = tkinter.Label(text="Password Manager", font=("", 25, "bold"), fg="#161616", bg="#E1E9EF")
-title_label.grid(row=1, column=1, columnspan=3, pady=(0, 40))
+title_label.grid(row=1, column=1, columnspan=2, pady=(0, 40))
 
 # Platform
 platform_label = tkinter.Label(text="Platform", bg="#E1E9EF", font=("", 12, "normal")) 
@@ -59,11 +58,5 @@ load_platform = tkinter.Entry(font=("", 15, "normal"))
 load_platform.grid(row=10, column=1, pady=(0, 20), padx=(0, 50))
 
 # Load Button
-load_button = tkinter.Button(text="Load", fg="white", bg="#10688E", font=("", 12, "normal"), padx=50, command=lambda: load.load(load_platform, window))
-load_button.grid(row=10, column=2, sticky="nw")
-
-# Load All Button
-load_all_button = tkinter.Button(text="Load All", fg="white", bg="#10688E", font=("", 12, "normal"), padx=30, command=loadAll)
-load_all_button.grid(row=10, column=3, sticky="nw")
-
-window.mainloop()
+load_button = tkinter.Button(text="Load", fg="white", bg="#10688E", width=8, padx=10, font=("", 12, "normal"), command=lambda: load.load(load_platform, window))
+load_button.grid(row=10, column=2, sticky="ew")
